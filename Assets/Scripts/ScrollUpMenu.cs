@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScrollUpMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    private const string IS_PRESSED = "IsPressed";
+    private Animator animator;
+    private Touch touch;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+        touch = Input.touches[0];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        if (touch.phase == TouchPhase.Began) OnDown();
+    }
+
+    private void OnDown() {
+        Debug.Log("touch");
+        animator.SetBool(IS_PRESSED, true);
     }
 }
