@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 39
+  controlID: 96
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -481,9 +481,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d4650000
-    m_LastClickedID: 26068
-    m_ExpandedIDs: 00000000b6650000b8650000ba650000bc65000000ca9a3b
+    m_SelectedIDs: 58660000
+    m_LastClickedID: 26200
+    m_ExpandedIDs: 000000003a6600003c6600003e6600004066000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,7 +511,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6650000b8650000ba650000bc650000
+    m_ExpandedIDs: 000000003a6600003c6600003e66000040660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002a700000746e0000e89700007c6d000000000000067f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -653,7 +653,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 12fbffff86640000d4640000f2640000
+      m_ExpandedIDs: a6deffff30f1ffff34f1ffff12fbffff7a6400008e640000186500005e6500007a650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1072,9 +1072,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 486.01114, y: -141.32527, z: 0.8733605}
+    m_Target: {x: 992.5857, y: 80.79647, z: -5.2078977}
     speed: 2
-    m_Value: {x: 486.01114, y: -141.32527, z: 0.8733605}
+    m_Value: {x: 992.5857, y: 80.79647, z: -5.2078977}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1124,9 +1124,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 210.41457
+    m_Target: 818.5398
     speed: 2
-    m_Value: 210.41457
+    m_Value: 818.5398
   m_Ortho:
     m_Target: 1
     speed: 2
