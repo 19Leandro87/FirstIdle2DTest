@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BottomMenusAnimation.cs" />
     <Compile Include="Assets\Scripts\WorldImageManager.cs" />
+    <Compile Include="Assets\Scripts\GloballValues.cs" />
+    <Compile Include="Assets\Scripts\WorldStatsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

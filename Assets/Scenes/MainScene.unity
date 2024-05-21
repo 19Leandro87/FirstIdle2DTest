@@ -1174,6 +1174,7 @@ GameObject:
   - component: {fileID: 229271855}
   - component: {fileID: 229271854}
   - component: {fileID: 229271853}
+  - component: {fileID: 229271856}
   m_Layer: 5
   m_Name: WorldStatsCanvas
   m_TagString: Untagged
@@ -1264,6 +1265,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &229271856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229271851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec867e66d0acc63498b39af335dfead1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollutionText: {fileID: 1509385393}
+  cleanlinessText: {fileID: 1158915976}
 --- !u!1 &233925215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6697,6 +6712,7 @@ GameObject:
   - component: {fileID: 1286957638}
   - component: {fileID: 1286957640}
   - component: {fileID: 1286957639}
+  - component: {fileID: 1286957641}
   m_Layer: 5
   m_Name: WorldImage
   m_TagString: Untagged
@@ -6761,6 +6777,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286957637}
   m_CullTransparentMesh: 1
+--- !u!114 &1286957641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286957637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e05a37f77ff5064c8c257ed2e38d9dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1368149465
 GameObject:
   m_ObjectHideFlags: 0
