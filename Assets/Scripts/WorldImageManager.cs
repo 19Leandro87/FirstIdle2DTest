@@ -6,8 +6,17 @@ using UnityEngine.EventSystems;
 
 public class WorldImageManager : MonoBehaviour, IPointerDownHandler
 {
-    public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log(this.gameObject.name + " Was Clicked.");
-        WorldStatsManager.Instance.UpdateWorldStats(WorldStatsManager.Instance.testValue);
+    public static WorldImageManager Instance { get; private set; }
+    private float clickValue;
+
+    private void Awake() {
+        Instance = this;
+        clickValue = 1;
     }
+
+    public void OnPointerDown(PointerEventData eventData) {
+        WorldStatsManager.Instance.UpdateWorldStats(clickValue);
+    }
+
+    private void SetClickValue(float newClickValue) { clickValue = newClickValue; }
 }

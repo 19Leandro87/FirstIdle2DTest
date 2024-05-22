@@ -5,32 +5,27 @@ using UnityEngine;
 
 public class WorldStatsManager : MonoBehaviour {
     public static WorldStatsManager Instance {get; private set;}
-
-    private float initialPollution;
-    private float updatedPollution = 0;
+    private float updatedPollution;
     [SerializeField] private TextMeshProUGUI pollutionText;
     [SerializeField] private TextMeshProUGUI cleanlinessText;
 
-    //test value just for debugging purposes
-    public float testValue = 0;
-
     private void Awake() {
         Instance = this;
+        updatedPollution = GlobalValues.BASE_POLLUTION; //<<< gonna be = a saved value
     }
 
     private void Start() {
-        //TO BE UPDATED
-        initialPollution = GlobalValues.BASE_POLLUTION - updatedPollution;
-        UpdateWorldStats(testValue);
+        UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
-    public void UpdateWorldStats(float pollution) {
-        testValue++;
-        float newPollution = 100 * (initialPollution - pollution) / GlobalValues.BASE_POLLUTION;
-        pollutionText.text = "Pollution: " + newPollution.ToString("F3") + "%";
-        cleanlinessText.text = "The World is " + (100 - newPollution).ToString("F6") + "% clean";
+    public void UpdateWorldStats(float pollutionChange) {
+        updatedPollution -= pollutionChange;
+        UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
-    private void SetUpdatedPollution(float newPollution) { updatedPollution = newPollution; }
+    private void UpdateTexts(float pollution) {
+        pollutionText.text = "Pollution: " + pollution.ToString("F2") + "%";
+        cleanlinessText.text = "The World is " + (100 - pollution).ToString("F5") + "% clean";
+    }
 }
 

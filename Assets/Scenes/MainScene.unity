@@ -6179,8 +6179,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0% Clean
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d2fb38d839b8a64f984343711c7c1d4, type: 2}
-  m_sharedMaterial: {fileID: -5930091442446986580, guid: 5d2fb38d839b8a64f984343711c7c1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af49c58cfda7cec4191530b3dc8b8ec2, type: 2}
+  m_sharedMaterial: {fileID: -2080120773573444369, guid: af49c58cfda7cec4191530b3dc8b8ec2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7563,8 +7563,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pollution: 100%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5d2fb38d839b8a64f984343711c7c1d4, type: 2}
-  m_sharedMaterial: {fileID: -5930091442446986580, guid: 5d2fb38d839b8a64f984343711c7c1d4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: af49c58cfda7cec4191530b3dc8b8ec2, type: 2}
+  m_sharedMaterial: {fileID: -2080120773573444369, guid: af49c58cfda7cec4191530b3dc8b8ec2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7594,7 +7594,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 5
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9334,7 +9334,7 @@ GameObject:
   - component: {fileID: 1916496257}
   - component: {fileID: 1916496256}
   m_Layer: 5
-  m_Name: Image
+  m_Name: UnitsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9410,6 +9410,7 @@ GameObject:
   - component: {fileID: 1917730421}
   - component: {fileID: 1917730420}
   - component: {fileID: 1917730419}
+  - component: {fileID: 1917730423}
   m_Layer: 5
   m_Name: UnitsCanvas
   m_TagString: Untagged
@@ -9523,6 +9524,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1917730423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917730417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b408e342208f042a6a219079dced5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit1CostText: {fileID: 1264821821}
+  unit1CountText: {fileID: 1448074270}
+  unit1BuyButton: {fileID: 1888575384}
 --- !u!1 &1918866831
 GameObject:
   m_ObjectHideFlags: 0
