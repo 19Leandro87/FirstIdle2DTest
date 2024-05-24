@@ -8,18 +8,38 @@ public class WorldStatsManager : MonoBehaviour {
     private float updatedPollution;
     [SerializeField] private TextMeshProUGUI pollutionText;
     [SerializeField] private TextMeshProUGUI cleanlinessText;
+    private SaveObject saveObject;
+    private float saveInterval;
+    private float timer;
 
     private void Awake() {
         Instance = this;
-        updatedPollution = GlobalValues.BASE_POLLUTION; //<<< gonna be = a saved value
+
+        saveObject = new SaveObject();
+        SaveSystem.Init();
+        //if there are no save games, updated pollution = base pollution, else updated pollution = last saved pollution
+        if (!SaveSystem.SaveGamesExist()) updatedPollution = GlobalValues.BASE_POLLUTION;
+        else updatedPollution = JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).updatedPollution;
+
+        timer = 0;
+        saveInterval = 2f;
     }
 
     private void Start() {
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
+    private void Update() {
+        timer += Time.deltaTime;
+        if (timer > saveInterval) {
+            timer = 0;
+            SaveStats();
+        }
+    }
+
     public void UpdateWorldStats(float pollutionChange) {
         updatedPollution -= pollutionChange;
+        saveObject.updatedPollution = updatedPollution;
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
@@ -27,5 +47,6 @@ public class WorldStatsManager : MonoBehaviour {
         pollutionText.text = "Pollution: " + pollution.ToString("F2") + "%";
         cleanlinessText.text = "The World is " + (100 - pollution).ToString("F5") + "% clean";
     }
-}
 
+    private void SaveStats() { SaveSystem.Save(JsonUtility.ToJson(saveObject)); }
+}

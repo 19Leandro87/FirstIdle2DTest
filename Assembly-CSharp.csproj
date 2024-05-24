@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BottomMenusAnimation.cs" />
     <Compile Include="Assets\Scripts\WorldImageManager.cs" />
+    <Compile Include="Assets\Scripts\SaveObject.cs" />
     <Compile Include="Assets\Scripts\GloballValues.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\UnitsManager.cs" />
     <Compile Include="Assets\Scripts\WorldStatsManager.cs" />
   </ItemGroup>
