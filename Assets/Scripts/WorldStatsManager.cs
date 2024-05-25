@@ -22,7 +22,7 @@ public class WorldStatsManager : MonoBehaviour {
         else updatedPollution = JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).updatedPollution;
 
         timer = 0;
-        saveInterval = 2f;
+        saveInterval = 3f;
     }
 
     private void Start() {
@@ -34,6 +34,7 @@ public class WorldStatsManager : MonoBehaviour {
         if (timer > saveInterval) {
             timer = 0;
             SaveStats();
+            Debug.Log("saved");
         }
     }
 
