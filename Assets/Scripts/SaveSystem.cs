@@ -19,12 +19,13 @@ public static class SaveSystem {
     }
 
     public static void Save(string saveString) {
-        // Initialize save number, paste the actual save number converting it to int from string, create indexed save, increase index for next save
+        // Initialize save number, paste the actual save number converting it to int from string, create indexed save and increase index for next save
         int saveNumber = 1;
         Int32.TryParse(File.ReadAllText(SAVE_INDEX_FILE), out saveNumber);
-        File.WriteAllText(SAVE_FOLDER + "save_" + saveNumber + "." + SAVE_EXTENSION, saveString);
         File.WriteAllText(SAVE_INDEX_FILE, (saveNumber + 1).ToString());
+        File.WriteAllText(SAVE_FOLDER + "save_" + saveNumber + "." + SAVE_EXTENSION, saveString);
 
+        
         // Define the number of save games to keep, then delete the n-1th + the corresponding meta
         int numberOfSavesToKeep = 3;
         if (saveNumber > numberOfSavesToKeep) {

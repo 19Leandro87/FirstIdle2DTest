@@ -33,8 +33,8 @@ public class WorldStatsManager : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer > saveInterval) {
             timer = 0;
+            saveObject.updatedPollution = updatedPollution;
             SaveStats();
-            Debug.Log("saved");
         }
     }
 
