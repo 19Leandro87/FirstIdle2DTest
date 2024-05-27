@@ -8,39 +8,43 @@ public class UnitsManager : MonoBehaviour
 {
     public static UnitsManager Instance { get; private set; }
 
-    private int buyMultiplier;
+    [SerializeField] private List<UnitLineObject> unitLines;
 
-    //---UNIT 1---
-    [SerializeField] private TextMeshProUGUI unit1CostText;
-    private float unit1Cost;
-    [SerializeField] private TextMeshProUGUI unit1CountText;
-    private int unit1Count;
-    private float unit1PollutionClean;
-    [SerializeField] private Button unit1BuyButton;
+    private int buyMultiplier;
+    private List<UnitObject> units;
 
     private void Awake() {
         Instance = this;
         buyMultiplier = 1;
-
-        //---UNIT 1---
-        unit1Cost = GlobalValues.UNIT1_BASE_PRICE;
-        unit1CostText.text = "$ " + unit1Cost;
-        unit1Count = 0;
-        unit1CountText.text = "N. " + unit1Count.ToString();
-        unit1PollutionClean = GlobalValues.UNIT1_BASE_POLLUTION_CLEAN;
     }
 
     private void Start() {
-        unit1BuyButton.onClick.AddListener(() => { Debug.Log("UEUEUE"); });
+        units = new List<UnitObject>();
+        units.Add(GlobalValues.BASE_UNITS[0]);
+        units[0].Price = 100;
+        unitLines[0].priceText.text = units[0].Price.ToString();
+
+        unitLines[0].buyButton.onClick.AddListener(() => {
+            unitLines[0].priceText.text = (GlobalValues.BASE_UNITS[0].PriceFactor * units[0].Price).ToString();
+        });
 
     }
 
-    private void UpdateUnitLine(int multiplier, float presentCost, float presentPollutionClean, int presentCount) {
-        
+    private void Update() {
+        UnitsUnlock();
+
+    }
+
+    private void UpdateUnitLine(int multiplier, float presentCost, float presentPollutionClean, int presentLevel) {
+
     }
 
     public void ChangeBuyMultiplier(int multiplier) { 
         buyMultiplier = multiplier; 
+    }
+
+    public void UnitsUnlock() { 
+        //depending on the pollution level, set units enabled to true gradually
     }
 
 }
