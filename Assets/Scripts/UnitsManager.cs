@@ -21,6 +21,7 @@ public class UnitsManager : MonoBehaviour
     private void Start() {
         units = new List<UnitObject>();
         units.Add(GlobalValues.BASE_UNITS[0]);
+
         units[0].Price = 100;
         unitLines[0].priceText.text = units[0].Price.ToString();
 
