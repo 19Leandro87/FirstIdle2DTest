@@ -32,38 +32,35 @@ public class UnitsManager : MonoBehaviour
                 unitLines[i].gameObject.SetActive(JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitsEnabled[i]);
                 units[i].Level = JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitsLevel[i];
 
-                if (units[i].Level > 0)
+                if (units[i].Level > 0) {
                     units[i].Price = GlobalValues.BASE_UNITS[i].Price * Mathf.Pow(GlobalValues.BASE_UNITS[i].PriceFactor, units[i].Level);
-                else
-                    units[i].Price = GlobalValues.BASE_UNITS[i].Price;
-
-                unitDataFields[i].priceText.text = units[i].Price.ToString();
-                unitDataFields[i].levelText.text = units[i].Level.ToString();
+                    units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean * units[i].Level * units[i].PollutionCleanFactor;
+                }
+                UnitTextFieldsUpdate(i);
             }
+            unitDataFields[i].buyButton.onClick.AddListener(() => { UnitLevelUp(i); });
         }
     }
 
     private void Start() {
 
-
-        units.Add(GlobalValues.BASE_UNITS[0]);
-
-        units[0].Price = 100;
-        //unitLines[0].priceText.text = units[0].Price.ToString();
-
-        /*unitLines[0].buyButton.onClick.AddListener(() => {
-            unitLines[0].priceText.text = (GlobalValues.BASE_UNITS[0].PriceFactor * units[0].Price).ToString();
-        });*/
-
     }
 
     private void Update() {
         UnitsUnlock();
-
     }
 
-    private void UpdateUnitLine(int multiplier, float presentCost, float presentPollutionClean, int presentLevel) {
+    private void UnitLevelUp(int unitIndex) {
+        units[unitIndex].Level += buyMultiplier;
+        units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
+        units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
 
+        UnitTextFieldsUpdate(unitIndex);
+    }
+
+    private void UnitTextFieldsUpdate(int unitIndex) {
+        unitDataFields[unitIndex].priceText.text = units[unitIndex].Price.ToString();
+        unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
 
     public void ChangeBuyMultiplier(int multiplier) { 
