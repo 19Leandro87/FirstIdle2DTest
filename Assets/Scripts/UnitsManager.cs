@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class UnitsManager : MonoBehaviour
     [SerializeField] private List<UnitLineObject> unitDataFields;
     private List<UnitObject> units;
     private int buyMultiplier;
+    private float timer, updateUnitsUnlockInterval;
 
 
     /*
@@ -23,13 +25,15 @@ public class UnitsManager : MonoBehaviour
     private void Awake() {
         Instance = this;
         buyMultiplier = 1;
+        timer = 0;
+        updateUnitsUnlockInterval = 2f;
         units = new List<UnitObject>();
 
-        //Add a basic unit for each existing unit line to the units list, then if there's a save game update them all
-        for (int i = 0; i < unitLines.Count; i++) {
+        //Add each basic unit to the units list, then if there's a save game update them all
+        for (int i = 0; i < GlobalValues.BASE_UNITS.Count; i++) {
             units.Add(GlobalValues.BASE_UNITS[i]);
             if (SaveSystem.SaveGamesExist()) {
-                unitLines[i].gameObject.SetActive(JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitsEnabled[i]);
+                unitLines[i].gameObject.SetActive(JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitLinesEnabled[i]);
                 units[i].Level = JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitsLevel[i];
 
                 if (units[i].Level > 0) {
@@ -38,7 +42,7 @@ public class UnitsManager : MonoBehaviour
                 }
                 UnitTextFieldsUpdate(i);
             }
-            unitDataFields[i].buyButton.onClick.AddListener(() => { UnitLevelUp(i); });
+
         }
     }
 
@@ -47,7 +51,11 @@ public class UnitsManager : MonoBehaviour
     }
 
     private void Update() {
-        UnitsUnlock();
+        timer += Time.deltaTime;
+        if (timer > updateUnitsUnlockInterval) {
+            timer = 0;
+            UnitsUnlock();
+        }
     }
 
     private void UnitLevelUp(int unitIndex) {
@@ -67,8 +75,21 @@ public class UnitsManager : MonoBehaviour
         buyMultiplier = multiplier; 
     }
 
-    public void UnitsUnlock() { 
-        //depending on the pollution level, set units enabled to true gradually
+    public void UnitsUnlock() {
+        float worldUpdatedPollution = WorldStatsManager.Instance.GetUpdatedPollution();
+        for (int i = 0; i < unitLines.Count; i++)
+            if (worldUpdatedPollution < GlobalValues.BASE_POLLUTION - GlobalValues.BASE_POLLUTION * GlobalValues.BASE_UNITS[i].PollutionUnlockPercentage/100) unitLines[i].SetActive(true);
     }
 
+    public List<bool> GetEnabledUnitLines() {
+        List<bool> enabled = new List<bool>();
+        foreach (var unitLine in unitLines) enabled.Add(unitLine.activeSelf);
+        return enabled;
+    }
+
+    public List<int> GetUnitsLevel() {
+        List<int> levels = new List<int>();
+        foreach (var unit in units) levels.Add(unit.Level);
+        return levels;
+    }
 }

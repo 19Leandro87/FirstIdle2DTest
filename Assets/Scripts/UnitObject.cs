@@ -7,4 +7,5 @@ public class UnitObject
     public float PriceFactor { get; set; }
     public float PollutionClean { get; set; }
     public float PollutionCleanFactor { get; set; }
+    public float PollutionUnlockPercentage;
 }

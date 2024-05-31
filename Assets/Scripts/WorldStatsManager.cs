@@ -34,7 +34,7 @@ public class WorldStatsManager : MonoBehaviour {
         }
 
         timer = 0;
-        saveInterval = 10f;
+        saveInterval = 5f;
     }
 
     private void Start() {
@@ -47,6 +47,8 @@ public class WorldStatsManager : MonoBehaviour {
             timer = 0;
             saveObject.updatedPollution = updatedPollution;
             saveObject.updatedMoney = money;
+            saveObject.unitLinesEnabled = UnitsManager.Instance.GetEnabledUnitLines();
+            saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
             SaveStats();
         }
     }
@@ -69,4 +71,10 @@ public class WorldStatsManager : MonoBehaviour {
     private void UpdateMoney(long moneyChange) { money += moneyChange; }
 
     private void SaveStats() { SaveSystem.Save(JsonUtility.ToJson(saveObject)); }
+
+    public void SetMoney(long updatedMoney) { money = updatedMoney; }
+
+    public float GetUpdatedPollution() { return updatedPollution; }
+
+    public void SetUnitLinesEnabled(List<bool> unitLinesEnabled) { saveObject.unitLinesEnabled = unitLinesEnabled; }
 }
