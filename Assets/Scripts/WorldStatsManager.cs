@@ -45,10 +45,6 @@ public class WorldStatsManager : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer > saveInterval) {
             timer = 0;
-            saveObject.updatedPollution = updatedPollution;
-            saveObject.updatedMoney = money;
-            saveObject.unitLinesEnabled = UnitsManager.Instance.GetEnabledUnitLines();
-            saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
             SaveStats();
         }
     }
@@ -70,7 +66,13 @@ public class WorldStatsManager : MonoBehaviour {
 
     private void UpdateMoney(long moneyChange) { money += moneyChange; }
 
-    private void SaveStats() { SaveSystem.Save(JsonUtility.ToJson(saveObject)); }
+    public void SaveStats() {
+        saveObject.updatedPollution = updatedPollution;
+        saveObject.updatedMoney = money;
+        saveObject.unitLinesEnabled = UnitsManager.Instance.GetEnabledUnitLines();
+        saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
+        SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
+    }
 
     public void SetMoney(long updatedMoney) { money = updatedMoney; }
 

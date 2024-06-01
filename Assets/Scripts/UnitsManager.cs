@@ -15,13 +15,8 @@ public class UnitsManager : MonoBehaviour
     private int buyMultiplier;
     private float timer, updateUnitsUnlockInterval;
 
-
-    /*
-     COST PROGRESSION HYPOTHESIS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    cost_{next} = cost_{base} * (pricefactor)^{level}
-
-     */
-
+     //COST PROGRESSION HYPOTHESIS: cost_{next} = cost_{base} * (pricefactor)^{level}
+     
     private void Awake() {
         Instance = this;
         buyMultiplier = 1;
@@ -29,7 +24,7 @@ public class UnitsManager : MonoBehaviour
         updateUnitsUnlockInterval = 2f;
         units = new List<UnitObject>();
 
-        //Add each basic unit to the units list, then if there's a save game update them all
+        //Add each basic unit to the units list, then if there's a saved game update them all
         for (int i = 0; i < GlobalValues.BASE_UNITS.Count; i++) {
             units.Add(GlobalValues.BASE_UNITS[i]);
             if (SaveSystem.SaveGamesExist()) {
@@ -42,7 +37,12 @@ public class UnitsManager : MonoBehaviour
                 }
                 UnitTextFieldsUpdate(i);
             }
+        }
 
+        //Add the level up function to each unit's buy button
+        foreach (var unit in units) {
+            int unitIndex = units.FindIndex(obj => obj.Name.Contains(unit.Name));
+            unitDataFields[unitIndex].buyButton.onClick.AddListener(() => { UnitLevelUp(unitIndex); });
         }
     }
 
@@ -64,21 +64,21 @@ public class UnitsManager : MonoBehaviour
         units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
 
         UnitTextFieldsUpdate(unitIndex);
+        WorldStatsManager.Instance.SaveStats();
     }
 
     private void UnitTextFieldsUpdate(int unitIndex) {
-        unitDataFields[unitIndex].priceText.text = units[unitIndex].Price.ToString();
+        unitDataFields[unitIndex].priceText.text = Mathf.Floor(units[unitIndex].Price).ToString();
         unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
 
-    public void ChangeBuyMultiplier(int multiplier) { 
-        buyMultiplier = multiplier; 
-    }
+    public void ChangeBuyMultiplier(int multiplier) { buyMultiplier = multiplier; }
 
     public void UnitsUnlock() {
         float worldUpdatedPollution = WorldStatsManager.Instance.GetUpdatedPollution();
-        for (int i = 0; i < unitLines.Count; i++)
-            if (worldUpdatedPollution < GlobalValues.BASE_POLLUTION - GlobalValues.BASE_POLLUTION * GlobalValues.BASE_UNITS[i].PollutionUnlockPercentage/100) unitLines[i].SetActive(true);
+        for (int i = 0; i < GlobalValues.BASE_UNITS.Count; i++)
+            if (worldUpdatedPollution < GlobalValues.BASE_POLLUTION - GlobalValues.BASE_POLLUTION * GlobalValues.BASE_UNITS[i].PollutionUnlockPercentage/100) 
+                unitLines[i].SetActive(true);
     }
 
     public List<bool> GetEnabledUnitLines() {
