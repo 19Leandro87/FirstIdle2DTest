@@ -7,4 +7,5 @@ public class SaveObject
     public long updatedMoney;
     public List<bool> unitLinesEnabled;
     public List<int> unitsLevel;
+    public List<float> unitsPrice;
 }

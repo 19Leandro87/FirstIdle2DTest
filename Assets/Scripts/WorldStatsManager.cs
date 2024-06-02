@@ -64,17 +64,20 @@ public class WorldStatsManager : MonoBehaviour {
         moneyText.text = "$ " + money.ToString();
     }
 
-    private void UpdateMoney(long moneyChange) { money += moneyChange; }
+    public void UpdateMoney(long moneyChange) { money += moneyChange; }
 
     public void SaveStats() {
         saveObject.updatedPollution = updatedPollution;
         saveObject.updatedMoney = money;
         saveObject.unitLinesEnabled = UnitsManager.Instance.GetEnabledUnitLines();
         saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
+        saveObject.unitsPrice = UnitsManager.Instance.GetUnitsPrice();
         SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
     }
 
     public void SetMoney(long updatedMoney) { money = updatedMoney; }
+
+    public long GetMoney() { return money; }
 
     public float GetUpdatedPollution() { return updatedPollution; }
 

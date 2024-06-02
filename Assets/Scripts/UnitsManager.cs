@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -14,9 +15,13 @@ public class UnitsManager : MonoBehaviour
     private List<UnitObject> units;
     private int buyMultiplier;
     private float timer, updateUnitsUnlockInterval;
+    private SaveObject loadedObject;
 
-     //COST PROGRESSION HYPOTHESIS: cost_{next} = cost_{base} * (pricefactor)^{level}
-     
+    //COST PROGRESSION HYPOTHESIS:
+    //cost_{next} = cost_{previous} + (pricefactor)^{level}
+    //cost_{next} = cost_{base} + (pricefactor)^{level}
+    //cost_{next} = cost_{base} * (pricefactor)^{level}
+
     private void Awake() {
         Instance = this;
         buyMultiplier = 1;
@@ -28,13 +33,11 @@ public class UnitsManager : MonoBehaviour
         for (int i = 0; i < GlobalValues.BASE_UNITS.Count; i++) {
             units.Add(GlobalValues.BASE_UNITS[i]);
             if (SaveSystem.SaveGamesExist()) {
-                unitLines[i].gameObject.SetActive(JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitLinesEnabled[i]);
-                units[i].Level = JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).unitsLevel[i];
-
-                if (units[i].Level > 0) {
-                    units[i].Price = GlobalValues.BASE_UNITS[i].Price * Mathf.Pow(GlobalValues.BASE_UNITS[i].PriceFactor, units[i].Level);
-                    units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean * units[i].Level * units[i].PollutionCleanFactor;
-                }
+                loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
+                unitLines[i].gameObject.SetActive(loadedObject.unitLinesEnabled[i]);
+                units[i].Level = loadedObject.unitsLevel[i];
+                units[i].Price = loadedObject.unitsPrice[i];
+                units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean * units[i].Level * units[i].PollutionCleanFactor;
                 UnitTextFieldsUpdate(i);
             }
         }
@@ -55,20 +58,26 @@ public class UnitsManager : MonoBehaviour
         if (timer > updateUnitsUnlockInterval) {
             timer = 0;
             UnitsUnlock();
-        }
+        } 
     }
 
     private void UnitLevelUp(int unitIndex) {
-        units[unitIndex].Level += buyMultiplier;
-        units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
-        units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
+        if (WorldStatsManager.Instance.GetMoney() >= units[unitIndex].Price) {
+            long cost = (long)units[unitIndex].Price;
+            Debug.Log(cost);
+            WorldStatsManager.Instance.UpdateMoney(-cost);
+            WorldStatsManager.Instance.UpdateWorldStats(0);
+            units[unitIndex].Level += buyMultiplier;
+            units[unitIndex].Price += Mathf.Ceil(Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level));
+            units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
 
-        UnitTextFieldsUpdate(unitIndex);
-        WorldStatsManager.Instance.SaveStats();
+            UnitTextFieldsUpdate(unitIndex);
+            WorldStatsManager.Instance.SaveStats();
+        }
     }
 
     private void UnitTextFieldsUpdate(int unitIndex) {
-        unitDataFields[unitIndex].priceText.text = Mathf.Floor(units[unitIndex].Price).ToString();
+        unitDataFields[unitIndex].priceText.text = Mathf.Ceil(units[unitIndex].Price).ToString();
         unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
 
@@ -91,5 +100,11 @@ public class UnitsManager : MonoBehaviour
         List<int> levels = new List<int>();
         foreach (var unit in units) levels.Add(unit.Level);
         return levels;
+    }
+
+    public List<float> GetUnitsPrice() {
+        List<float> prices = new List<float>();
+        foreach (var unit in units) prices.Add(unit.Price);
+        return prices;
     }
 }
