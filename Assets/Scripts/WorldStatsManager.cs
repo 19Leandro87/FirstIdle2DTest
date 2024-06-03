@@ -58,7 +58,7 @@ public class WorldStatsManager : MonoBehaviour {
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
-    private void UpdateTexts(float pollution) {
+    public void UpdateTexts(float pollution) {
         pollutionText.text = "Pollution: " + pollution.ToString("F2") + "%";
         cleanlinessText.text = "The World is " + (100 - pollution).ToString("F5") + "% clean";
         moneyText.text = "$ " + money.ToString();

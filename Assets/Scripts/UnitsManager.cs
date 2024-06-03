@@ -20,7 +20,7 @@ public class UnitsManager : MonoBehaviour
     //COST PROGRESSION HYPOTHESIS:
     //cost_{next} = cost_{previous} + (pricefactor)^{level}
     //cost_{next} = cost_{base} + (pricefactor)^{level}
-    //cost_{next} = cost_{base} * (pricefactor)^{level}
+    //cost_{next} = cost_{base} * (pricefactor)^{level owned} <<<<<<<<<<<<
 
     private void Awake() {
         Instance = this;
@@ -62,13 +62,26 @@ public class UnitsManager : MonoBehaviour
     }
 
     private void UnitLevelUp(int unitIndex) {
-        if (WorldStatsManager.Instance.GetMoney() >= units[unitIndex].Price) {
-            long cost = (long)units[unitIndex].Price;
-            Debug.Log(cost);
-            WorldStatsManager.Instance.UpdateMoney(-cost);
-            WorldStatsManager.Instance.UpdateWorldStats(0);
-            units[unitIndex].Level += buyMultiplier;
-            units[unitIndex].Price += Mathf.Ceil(Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level));
+        float referenceCost = units[unitIndex].Price;
+        int referenceLevel = units[unitIndex].Level;
+        if (buyMultiplier > 1)
+            for (int i = 0; i < buyMultiplier; i++) {
+                referenceLevel++;
+                referenceCost += GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, referenceLevel);
+            }
+        referenceCost = Mathf.Ceil(referenceCost);
+        Debug.Log(referenceCost);
+
+        if (WorldStatsManager.Instance.GetMoney() >= referenceCost) {
+            for (int i = 0; i < buyMultiplier; i++) {
+                units[unitIndex].Level++;
+                units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
+            }
+            units[unitIndex].Price = Mathf.Ceil(units[unitIndex].Price);
+
+            WorldStatsManager.Instance.UpdateMoney(-(long)units[unitIndex].Price);
+            WorldStatsManager.Instance.UpdateTexts(0);
+
             units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
 
             UnitTextFieldsUpdate(unitIndex);
@@ -81,7 +94,7 @@ public class UnitsManager : MonoBehaviour
         unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
 
-    public void ChangeBuyMultiplier(int multiplier) { buyMultiplier = multiplier; }
+    public void SetBuyMultiplier(int multiplier) { buyMultiplier = multiplier; }
 
     public void UnitsUnlock() {
         float worldUpdatedPollution = WorldStatsManager.Instance.GetUpdatedPollution();
