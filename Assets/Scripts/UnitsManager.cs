@@ -24,16 +24,30 @@ public class UnitsManager : MonoBehaviour
 
     private void Awake() {
         Instance = this;
-        buyMultiplier = 1;
+        buyMultiplier = 5;
         timer = 0;
         updateUnitsUnlockInterval = 2f;
         units = new List<UnitObject>();
+    }
 
-        //Add each basic unit to the units list, then if there's a saved game update them all
+    private void Start() {
+        //create a copy of the BASE_UNITS to work with, without altering the actual BASE_UNITS
         for (int i = 0; i < GlobalValues.BASE_UNITS.Count; i++) {
-            units.Add(GlobalValues.BASE_UNITS[i]);
-            if (SaveSystem.SaveGamesExist()) {
-                loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
+            units.Add(new UnitObject());
+            units[i].Enabled = GlobalValues.BASE_UNITS[i].Enabled;
+            units[i].Name = GlobalValues.BASE_UNITS[i].Name;
+            units[i].Level = GlobalValues.BASE_UNITS[i].Level;
+            units[i].Price = GlobalValues.BASE_UNITS[i].Price;
+            units[i].PriceFactor = GlobalValues.BASE_UNITS[i].PriceFactor;
+            units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean;
+            units[i].PollutionCleanFactor = GlobalValues.BASE_UNITS[i].PollutionCleanFactor;
+            units[i].PollutionUnlockPercentage = GlobalValues.BASE_UNITS[i].PollutionUnlockPercentage;
+        }
+
+        //if there's a saved game update all the units
+        if (SaveSystem.SaveGamesExist()) {
+            loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
+            for (int i = 0; i < units.Count; i++) {
                 unitLines[i].gameObject.SetActive(loadedObject.unitLinesEnabled[i]);
                 units[i].Level = loadedObject.unitsLevel[i];
                 units[i].Price = loadedObject.unitsPrice[i];
@@ -49,10 +63,6 @@ public class UnitsManager : MonoBehaviour
         }
     }
 
-    private void Start() {
-
-    }
-
     private void Update() {
         timer += Time.deltaTime;
         if (timer > updateUnitsUnlockInterval) {
@@ -61,25 +71,37 @@ public class UnitsManager : MonoBehaviour
         } 
     }
 
+    private void UnitLevelUp2(int unitIndex) {
+        for (int i = 0; i < buyMultiplier; i++) {
+            units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
+            units[unitIndex].Level++;
+            Debug.Log("Level: " + units[unitIndex].Level + " - Price:  " + units[unitIndex].Price + " - Base price: " + GlobalValues.BASE_UNITS[unitIndex].Price);
+        }
+    }
+
     private void UnitLevelUp(int unitIndex) {
         float referenceCost = units[unitIndex].Price;
         int referenceLevel = units[unitIndex].Level;
+        float referenceCostIncremented = referenceCost;
+
         if (buyMultiplier > 1)
             for (int i = 0; i < buyMultiplier; i++) {
+                referenceCost = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, referenceLevel);
                 referenceLevel++;
-                referenceCost += GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, referenceLevel);
+                referenceCostIncremented += referenceCost;
             }
-        referenceCost = Mathf.Ceil(referenceCost);
-        Debug.Log(referenceCost);
+        referenceCostIncremented = Mathf.Ceil(referenceCostIncremented);
+        Debug.Log("referenceCostIncremented " + referenceCostIncremented);
 
-        if (WorldStatsManager.Instance.GetMoney() >= referenceCost) {
+        if (WorldStatsManager.Instance.GetMoney() >= referenceCostIncremented) {
             for (int i = 0; i < buyMultiplier; i++) {
-                units[unitIndex].Level++;
                 units[unitIndex].Price = GlobalValues.BASE_UNITS[unitIndex].Price * Mathf.Pow(GlobalValues.BASE_UNITS[unitIndex].PriceFactor, units[unitIndex].Level);
+                units[unitIndex].Level++;
+                WorldStatsManager.Instance.UpdateMoney(-(long)units[unitIndex].Price);
             }
             units[unitIndex].Price = Mathf.Ceil(units[unitIndex].Price);
+            Debug.Log("price " + units[unitIndex].Price);
 
-            WorldStatsManager.Instance.UpdateMoney(-(long)units[unitIndex].Price);
             WorldStatsManager.Instance.UpdateTexts(0);
 
             units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
