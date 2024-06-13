@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class SaveObject
 {
-    public float updatedPollution;
-    public long updatedMoney;
+    public double updatedPollution;
+    public double updatedMoney;
     public List<bool> unitLinesEnabled;
-    public List<int> unitsLevel;
-    public List<float> unitsPrice;
+    public List<long> unitsLevel;
+    public List<double> unitsPrice;
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class WorldStatsManager : MonoBehaviour {
     public static WorldStatsManager Instance {get; private set;}
-    private float updatedPollution;
-    private long money;
+    private double updatedPollution;
+    private double money;
     [SerializeField] private TextMeshProUGUI pollutionText;
     [SerializeField] private TextMeshProUGUI cleanlinessText;
     [SerializeField] private TextMeshProUGUI moneyText;
@@ -50,7 +50,7 @@ public class WorldStatsManager : MonoBehaviour {
     }
 
     //money increases by the same amount of which pollution decreases with a 1:1 ratio
-    public void UpdateWorldStats(float pollutionChange) {
+    public void UpdateWorldStats(double pollutionChange) {
         updatedPollution -= pollutionChange;
         UpdateMoney(Convert.ToInt64(pollutionChange));
         saveObject.updatedPollution = updatedPollution;
@@ -58,13 +58,13 @@ public class WorldStatsManager : MonoBehaviour {
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
-    public void UpdateTexts(float pollution) {
+    public void UpdateTexts(double pollution) {
         pollutionText.text = "Pollution: " + pollution.ToString("F2") + "%";
         cleanlinessText.text = "The World is " + (100 - pollution).ToString("F5") + "% clean";
-        moneyText.text = "$ " + money.ToString();
+        moneyText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(Math.Round(money, 2));
     }
 
-    public void UpdateMoney(long moneyChange) { money += moneyChange; }
+    public void UpdateMoney(double moneyChange) { money += moneyChange; }
 
     public void SaveStats() {
         saveObject.updatedPollution = updatedPollution;
@@ -75,11 +75,11 @@ public class WorldStatsManager : MonoBehaviour {
         SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
     }
 
-    public void SetMoney(long updatedMoney) { money = updatedMoney; }
+    public void SetMoney(double updatedMoney) { money = updatedMoney; }
 
-    public long GetMoney() { return money; }
+    public double GetMoney() { return money; }
 
-    public float GetUpdatedPollution() { return updatedPollution; }
+    public double GetUpdatedPollution() { return updatedPollution; }
 
     public void SetUnitLinesEnabled(List<bool> unitLinesEnabled) { saveObject.unitLinesEnabled = unitLinesEnabled; }
 }

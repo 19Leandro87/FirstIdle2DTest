@@ -1,1 +1,0 @@
-{"updatedPollution":96400.0,"updatedMoney":709,"unitLinesEnabled":[true,true,false],"unitsLevel":[25,5,0],"unitsPrice":[81.0,271.0,500.0]}
