@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\UnitsManager.cs" />
     <Compile Include="Assets\Scripts\WorldStatsManager.cs" />
+    <Compile Include="Assets\Scripts\BuyMultiplierLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -379,6 +379,7 @@
 -analyzer:"I:/UNITY/2022.3.29f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"I:/UNITY/2022.3.29f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/BottomMenusAnimation.cs"
+"Assets/Scripts/BuyMultiplierLine.cs"
 "Assets/Scripts/GloballValues.cs"
 "Assets/Scripts/SaveObject.cs"
 "Assets/Scripts/SaveSystem.cs"

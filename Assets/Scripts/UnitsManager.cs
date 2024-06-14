@@ -13,7 +13,7 @@ public class UnitsManager : MonoBehaviour
     [SerializeField] private List<GameObject> unitLines;
     [SerializeField] private List<UnitLineObject> unitDataFields;
     private List<UnitObject> units;
-    private int buyMultiplier;
+    private int buyMultiplier = 1;
     private float timer, updateUnitsUnlockInterval;
     private SaveObject loadedObject;
 
@@ -23,7 +23,6 @@ public class UnitsManager : MonoBehaviour
 
     private void Awake() {
         Instance = this;
-        buyMultiplier = 1;
         timer = 0;
         updateUnitsUnlockInterval = 2f;
         units = new List<UnitObject>();
@@ -61,6 +60,9 @@ public class UnitsManager : MonoBehaviour
             int unitIndex = units.FindIndex(obj => obj.Name.Contains(unit.Name));
             unitDataFields[unitIndex].buyButton.onClick.AddListener(() => { UnitLevelUp(unitIndex); });
         }
+
+        //reset the buy multiplier
+        SetBuyMultiplier(1);
     }
 
     private void Update() {
@@ -74,20 +76,18 @@ public class UnitsManager : MonoBehaviour
     private void UnitLevelUp(int unitIndex) {
         double referenceCost = PriceUp(unitIndex, units[unitIndex].Level);
         long referenceLevel = units[unitIndex].Level;
-        double referenceCostIncremented = referenceCost;
 
         //if buyMultiplier > 1 calculate the total cost of the multiple level up
         if (buyMultiplier > 1) {
-            referenceCostIncremented = 0;
+            referenceCost = 0;
             for (int i = 0; i < buyMultiplier; i++) {
-                referenceCost = PriceUp(unitIndex, referenceLevel);
+                referenceCost += PriceUp(unitIndex, referenceLevel);
                 referenceLevel++;
-                referenceCostIncremented += referenceCost;
             }
         }
 
         //level up the unit if the available money is greater than the total level up cost
-        if (WorldStatsManager.Instance.GetMoney() >= referenceCostIncremented) {
+        if (WorldStatsManager.Instance.GetMoney() >= referenceCost) {
             for (int i = 0; i < buyMultiplier; i++) {
                 units[unitIndex].Price = PriceUp(unitIndex, units[unitIndex].Level);
                 units[unitIndex].Level++;
@@ -108,7 +108,10 @@ public class UnitsManager : MonoBehaviour
 
     private double PriceUp(int index, long level) { return Math.Round(GlobalValues.BASE_UNITS[index].Price * Math.Pow(GlobalValues.BASE_UNITS[index].PriceFactor, level), 2); }
 
-    public void SetBuyMultiplier(int multiplier) { buyMultiplier = multiplier; }
+    public void SetBuyMultiplier(int multiplier) { 
+        buyMultiplier = multiplier;
+        for (int i = 0; i < units.Count; i++) unitDataFields[i].buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "BUY " + buyMultiplier.ToString();
+    }
 
     public void UnitsUnlock() {
         double worldUpdatedPollution = WorldStatsManager.Instance.GetUpdatedPollution();

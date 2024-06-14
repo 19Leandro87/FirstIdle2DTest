@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class WorldStatsManager : MonoBehaviour {
+public class WorldStatsManager : MonoBehaviour 
+{
     public static WorldStatsManager Instance {get; private set;}
     private double updatedPollution;
     private double money;
