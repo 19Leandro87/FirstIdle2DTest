@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\WorldImageManager.cs" />
     <Compile Include="Assets\Scripts\SaveObject.cs" />
     <Compile Include="Assets\Scripts\GloballValues.cs" />
+    <Compile Include="Assets\Scripts\WorldTimeAPI.cs" />
     <Compile Include="Assets\Scripts\UnitObject.cs" />
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\UnitsManager.cs" />

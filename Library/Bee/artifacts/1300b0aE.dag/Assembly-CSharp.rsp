@@ -388,6 +388,7 @@
 "Assets/Scripts/UnitsManager.cs"
 "Assets/Scripts/WorldImageManager.cs"
 "Assets/Scripts/WorldStatsManager.cs"
+"Assets/Scripts/WorldTimeAPI.cs"
 -langversion:9.0
 /deterministic
 /optimize+
