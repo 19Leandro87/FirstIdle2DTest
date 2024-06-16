@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlobalValues
 {
-    public const double BASE_POLLUTION = 100000d;
+    public const double BASE_POLLUTION = 1000000d;
 
     public static List<UnitObject> BASE_UNITS = new List<UnitObject> { 
         new UnitObject { Enabled = true, Name = "Unit 0", Level = 0, Price = 50d, PriceFactor = 1.05d, PollutionClean = 5f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 0f },

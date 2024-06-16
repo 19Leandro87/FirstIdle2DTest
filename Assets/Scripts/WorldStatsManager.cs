@@ -53,7 +53,7 @@ public class WorldStatsManager : MonoBehaviour
     //money increases by the same amount of which pollution decreases with a 1:1 ratio
     public void UpdateWorldStats(double pollutionChange) {
         updatedPollution -= pollutionChange;
-        UpdateMoney(Convert.ToInt64(pollutionChange));
+        UpdateMoney(pollutionChange);
         saveObject.updatedPollution = updatedPollution;
         saveObject.updatedMoney = money;
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
@@ -73,6 +73,8 @@ public class WorldStatsManager : MonoBehaviour
         saveObject.unitLinesEnabled = UnitsManager.Instance.GetEnabledUnitLines();
         saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
         saveObject.unitsPrice = UnitsManager.Instance.GetUnitsPrice();
+        saveObject.realWorldTime = WorldTimeAPI.Instance.GetRealTime();
+        saveObject.pollutionCleaning = UnitsManager.Instance.GetCumulativePollutionClean();
         SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
     }
 

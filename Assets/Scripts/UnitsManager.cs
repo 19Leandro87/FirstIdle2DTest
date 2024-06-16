@@ -14,8 +14,10 @@ public class UnitsManager : MonoBehaviour
     [SerializeField] private List<UnitLineObject> unitDataFields;
     private List<UnitObject> units;
     private int buyMultiplier = 1;
-    private float timer, updateUnitsUnlockInterval;
+    private float timer, unitsUnlockAndCleanUpdate;
     private SaveObject loadedObject;
+    private float cumulativePollutionClean = 0;
+
 
     //COST PROGRESSION HYPOTHESIS:
     //cost_{next} = cost_{base} + level * (pricefactor)^{level}
@@ -24,7 +26,7 @@ public class UnitsManager : MonoBehaviour
     private void Awake() {
         Instance = this;
         timer = 0;
-        updateUnitsUnlockInterval = 2f;
+        unitsUnlockAndCleanUpdate = 1f;
         units = new List<UnitObject>();
     }
 
@@ -43,7 +45,7 @@ public class UnitsManager : MonoBehaviour
             UnitTextFieldsUpdate(i);
         }
 
-        //if there's a saved game update all the units
+        //if there's a saved game update all the units and the pollution clean
         if (SaveSystem.SaveGamesExist()) {
             loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
             for (int i = 0; i < units.Count; i++) {
@@ -53,6 +55,7 @@ public class UnitsManager : MonoBehaviour
                 units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean * units[i].Level * units[i].PollutionCleanFactor;
                 UnitTextFieldsUpdate(i);
             }
+            cumulativePollutionClean = loadedObject.pollutionCleaning;
         }
 
         //Add the level up function to each unit's buy button
@@ -67,9 +70,10 @@ public class UnitsManager : MonoBehaviour
 
     private void Update() {
         timer += Time.deltaTime;
-        if (timer > updateUnitsUnlockInterval) {
-            timer = 0;
+        if (timer > unitsUnlockAndCleanUpdate) {
             UnitsUnlock();
+            UnitsPollutionCleaning();
+            timer = 0;
         } 
     }
 
@@ -92,12 +96,12 @@ public class UnitsManager : MonoBehaviour
                 units[unitIndex].Price = PriceUp(unitIndex, units[unitIndex].Level);
                 units[unitIndex].Level++;
                 WorldStatsManager.Instance.UpdateMoney(-units[unitIndex].Price);
+                cumulativePollutionClean += units[unitIndex].PollutionClean * units[unitIndex].PollutionCleanFactor;
             }
 
             WorldStatsManager.Instance.UpdateWorldStats(0);
             UnitTextFieldsUpdate(unitIndex);
             WorldStatsManager.Instance.SaveStats();
-            //units[unitIndex].PollutionClean += units[unitIndex].PollutionCleanFactor * GlobalValues.BASE_UNITS[unitIndex].PollutionClean * buyMultiplier;
         }
     }
 
@@ -105,6 +109,10 @@ public class UnitsManager : MonoBehaviour
         unitDataFields[unitIndex].priceText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(PriceUp(unitIndex, units[unitIndex].Level));
         unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
+
+    private void UnitsPollutionCleaning() { WorldStatsManager.Instance.UpdateWorldStats(cumulativePollutionClean); }
+
+    public float GetCumulativePollutionClean() {  return cumulativePollutionClean; }
 
     private double PriceUp(int index, long level) { return Math.Round(GlobalValues.BASE_UNITS[index].Price * Math.Pow(GlobalValues.BASE_UNITS[index].PriceFactor, level), 2); }
 

@@ -8,4 +8,6 @@ public class SaveObject
     public List<bool> unitLinesEnabled;
     public List<long> unitsLevel;
     public List<double> unitsPrice;
+    public long realWorldTime;
+    public float pollutionCleaning;
 }
