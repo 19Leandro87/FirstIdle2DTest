@@ -52,10 +52,9 @@ public class UnitsManager : MonoBehaviour
                 unitLines[i].gameObject.SetActive(loadedObject.unitLinesEnabled[i]);
                 units[i].Level = loadedObject.unitsLevel[i];
                 units[i].Price = loadedObject.unitsPrice[i];
-                units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean * units[i].Level * units[i].PollutionCleanFactor;
                 UnitTextFieldsUpdate(i);
             }
-            cumulativePollutionClean = loadedObject.pollutionCleaning;
+            cumulativePollutionClean = loadedObject.cumulativePollutionCleaning;
         }
 
         //Add the level up function to each unit's buy button

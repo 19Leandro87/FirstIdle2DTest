@@ -14,4 +14,7 @@ public class GlobalValues
 
     //Format string numbers concerning money, showing 2 decimals (if there are any), use dot to separate the decimal part and comma for the thousands etc.
     public static string MoneyStringNumbersFormat(double money) { return money.ToString(money % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture); }
+
+    public static long timeOnStart = 0;
+    public static long timeSinceLast = 0;
 }

@@ -11,7 +11,7 @@ public class WorldTimeAPI : MonoBehaviour
     private long unixTimeNow = 0;
     struct TimeData { public string unixtime; }
 
-    IEnumerator GetRealTimeFromAPI() { 
+    public IEnumerator GetRealTimeFromAPI() { 
         UnityWebRequest request = UnityWebRequest.Get(API_URL);
         yield return request.SendWebRequest();
 

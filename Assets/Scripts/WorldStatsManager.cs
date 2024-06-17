@@ -20,9 +20,12 @@ public class WorldStatsManager : MonoBehaviour
 
     private void Awake() {
         Instance = this;
-        SaveSystem.Init();
         saveObject = new SaveObject();
+        timer = 0;
+        saveInterval = 5f;
+    }
 
+    private void Start() {
         //if there are no save games, updated pollution = base pollution and money = 0, else updated pollution and money = last saved data
         if (!SaveSystem.SaveGamesExist()) {
             updatedPollution = GlobalValues.BASE_POLLUTION;
@@ -31,14 +34,8 @@ public class WorldStatsManager : MonoBehaviour
         else {
             loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
             updatedPollution = loadedObject.updatedPollution;
-            money = loadedObject.updatedMoney;
+            money = loadedObject.updatedMoney + GlobalValues.timeSinceLast * loadedObject.cumulativePollutionCleaning;
         }
-
-        timer = 0;
-        saveInterval = 5f;
-    }
-
-    private void Start() {
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
 
@@ -74,7 +71,7 @@ public class WorldStatsManager : MonoBehaviour
         saveObject.unitsLevel = UnitsManager.Instance.GetUnitsLevel();
         saveObject.unitsPrice = UnitsManager.Instance.GetUnitsPrice();
         saveObject.realWorldTime = WorldTimeAPI.Instance.GetRealTime();
-        saveObject.pollutionCleaning = UnitsManager.Instance.GetCumulativePollutionClean();
+        saveObject.cumulativePollutionCleaning = UnitsManager.Instance.GetCumulativePollutionClean();
         SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
     }
 

@@ -9,5 +9,5 @@ public class SaveObject
     public List<long> unitsLevel;
     public List<double> unitsPrice;
     public long realWorldTime;
-    public float pollutionCleaning;
+    public float cumulativePollutionCleaning;
 }
