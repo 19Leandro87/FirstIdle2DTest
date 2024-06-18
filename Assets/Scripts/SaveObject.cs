@@ -10,4 +10,5 @@ public class SaveObject
     public List<double> unitsPrice;
     public long realWorldTime;
     public float cumulativePollutionCleaning;
+    public long storedOfflineProfitTimeMultiplier;
 }

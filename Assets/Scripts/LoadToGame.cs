@@ -1,9 +1,11 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadToGame : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI loadingText;
     private void Start() { StartCoroutine(LoadMain()); }
 
     IEnumerator LoadMain() {
@@ -13,7 +15,9 @@ public class LoadToGame : MonoBehaviour
         GlobalValues.timeOnStart = WorldTimeAPI.Instance.GetRealTime();
         if (SaveSystem.SaveGamesExist())
             GlobalValues.timeSinceLast = GlobalValues.timeOnStart - JsonUtility.FromJson<SaveObject>(SaveSystem.Load()).realWorldTime;
-        if (GlobalValues.timeOnStart != 0) 
+        if (GlobalValues.timeOnStart != 0)
             SceneManager.LoadScene("MainScene");
+        else
+            loadingText.text = "Connection failed.\n Check your internet connection and restart the game.";
     }
 }

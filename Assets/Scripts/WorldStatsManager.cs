@@ -17,24 +17,30 @@ public class WorldStatsManager : MonoBehaviour
     private SaveObject loadedObject;
     private float saveInterval;
     private float timer;
+    private long maxProfitTime;
 
     private void Awake() {
         Instance = this;
         saveObject = new SaveObject();
         timer = 0;
-        saveInterval = 5f;
+        saveInterval = 3f;
     }
 
     private void Start() {
-        //if there are no save games, updated pollution = base pollution and money = 0, else updated pollution and money = last saved data
+        //if there are no save games, updated pollution = base pollution and money = 0, else update them
         if (!SaveSystem.SaveGamesExist()) {
             updatedPollution = GlobalValues.BASE_POLLUTION;
             money = 0;
-        }
-        else {
+        } else {
             loadedObject = JsonUtility.FromJson<SaveObject>(SaveSystem.Load());
-            updatedPollution = loadedObject.updatedPollution;
-            money = loadedObject.updatedMoney + GlobalValues.timeSinceLast * loadedObject.cumulativePollutionCleaning;
+            maxProfitTime = GlobalValues.basicOfflineProfitTime * loadedObject.storedOfflineProfitTimeMultiplier;
+            if (GlobalValues.timeSinceLast <= maxProfitTime) {
+                updatedPollution = loadedObject.updatedPollution - GlobalValues.timeSinceLast * loadedObject.cumulativePollutionCleaning;
+                money = loadedObject.updatedMoney + GlobalValues.timeSinceLast * loadedObject.cumulativePollutionCleaning;
+            } else {
+                updatedPollution = loadedObject.updatedPollution - maxProfitTime * loadedObject.cumulativePollutionCleaning;
+                money = loadedObject.updatedMoney + maxProfitTime * loadedObject.cumulativePollutionCleaning;
+            }
         }
         UpdateTexts(100 * updatedPollution / GlobalValues.BASE_POLLUTION);
     }
@@ -72,6 +78,7 @@ public class WorldStatsManager : MonoBehaviour
         saveObject.unitsPrice = UnitsManager.Instance.GetUnitsPrice();
         saveObject.realWorldTime = WorldTimeAPI.Instance.GetRealTime();
         saveObject.cumulativePollutionCleaning = UnitsManager.Instance.GetCumulativePollutionClean();
+        saveObject.storedOfflineProfitTimeMultiplier = GlobalValues.offlineProfitTimeMultiplier;
         SaveSystem.Save(JsonUtility.ToJson(saveObject)); 
     }
 

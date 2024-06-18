@@ -17,4 +17,6 @@ public class GlobalValues
 
     public static long timeOnStart = 0;
     public static long timeSinceLast = 0;
+    public static long basicOfflineProfitTime = 60; //Idle profits will be for the 1st half hour
+    public static long offlineProfitTimeMultiplier = 1;
 }
