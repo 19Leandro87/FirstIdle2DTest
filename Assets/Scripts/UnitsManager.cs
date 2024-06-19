@@ -77,19 +77,15 @@ public class UnitsManager : MonoBehaviour
     }
 
     private void UnitLevelUp(int unitIndex) {
-        double referenceCost = PriceUp(unitIndex, units[unitIndex].Level);
+        double referenceCost = 0;
         long referenceLevel = units[unitIndex].Level;
 
-        //if buyMultiplier > 1 calculate the total cost of the multiple level up
-        if (buyMultiplier > 1) {
-            referenceCost = 0;
-            for (int i = 0; i < buyMultiplier; i++) {
-                referenceCost += PriceUp(unitIndex, referenceLevel);
-                referenceLevel++;
-            }
+        for (int i = 0; i < buyMultiplier; i++) {
+            referenceCost += PriceUp(unitIndex, referenceLevel);
+            referenceLevel++;
         }
 
-        //level up the unit if the available money is greater than the total level up cost
+        //level up the unit if the available money is greater than the total level up cost 
         if (WorldStatsManager.Instance.GetMoney() >= referenceCost) {
             for (int i = 0; i < buyMultiplier; i++) {
                 units[unitIndex].Price = PriceUp(unitIndex, units[unitIndex].Level);
@@ -101,6 +97,7 @@ public class UnitsManager : MonoBehaviour
             WorldStatsManager.Instance.UpdateWorldStats(0);
             UnitTextFieldsUpdate(unitIndex);
             WorldStatsManager.Instance.SaveStats();
+            SetBuyMultiplier(buyMultiplier);
         }
     }
 
@@ -117,7 +114,16 @@ public class UnitsManager : MonoBehaviour
 
     public void SetBuyMultiplier(int multiplier) { 
         buyMultiplier = multiplier;
-        for (int i = 0; i < units.Count; i++) unitDataFields[i].buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "BUY " + buyMultiplier.ToString();
+        for (int i = 0; i < units.Count; i++) {
+            unitDataFields[i].buyButton.GetComponentInChildren<TextMeshProUGUI>().text = "BUY " + buyMultiplier.ToString();
+            double referenceCost = 0;
+            long referenceLevel = units[i].Level;
+            for (int j = 0; j < multiplier; j++) {
+                referenceCost += PriceUp(i, referenceLevel);
+                referenceLevel++;
+            }
+            unitDataFields[i].priceText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(referenceCost);
+        } 
     }
 
     public void UnitsUnlock() {

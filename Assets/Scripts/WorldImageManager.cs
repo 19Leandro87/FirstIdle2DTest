@@ -11,7 +11,7 @@ public class WorldImageManager : MonoBehaviour, IPointerDownHandler
 
     private void Awake() {
         Instance = this;
-        clickValue = 250;
+        clickValue = 1000000000000;
     }
 
     public void OnPointerDown(PointerEventData eventData) {

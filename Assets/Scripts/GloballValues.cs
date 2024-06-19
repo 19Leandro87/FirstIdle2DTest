@@ -13,10 +13,19 @@ public class GlobalValues
     };
 
     //Format string numbers concerning money, showing 2 decimals (if there are any), use dot to separate the decimal part and comma for the thousands etc.
-    public static string MoneyStringNumbersFormat(double money) { return money.ToString(money % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture); }
+    //If the price is above 99,999$ use exponential format n*e^x, same for the available money but if it's higher than 999,999,999,999$
+    public static string MoneyStringNumbersFormat(double money) {
+        if (money < 999999999999) return money.ToString(money % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture);
+        else return "a";
+    }    
+    
+    public static string PriceStringNumbersFormat(double price) {
+        if (price < 99999) return price.ToString(price % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture);
+        else return "a";
+    }
 
     public static long timeOnStart = 0;
     public static long timeSinceLast = 0;
-    public static long basicOfflineProfitTime = 60; //Idle profits will be for the 1st half hour
+    public static long basicOfflineProfitTime = 60; //Idle profits will run for the first basicOfflineProfitTime * offlineProfitTimeMultiplier seconds
     public static long offlineProfitTimeMultiplier = 1;
 }
