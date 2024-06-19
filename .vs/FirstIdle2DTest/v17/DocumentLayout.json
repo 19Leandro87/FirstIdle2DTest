@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|c:\\repos\\firstidle2dtest\\firstidle2dtest\\assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\loadtogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,22 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\upgradesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|c:\\repos\\firstidle2dtest\\firstidle2dtest\\assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\saveobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,11 +62,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "UpgradesManager.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradesManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradesManager.cs",
@@ -74,12 +74,11 @@
               "RelativeToolTip": "Assets\\Scripts\\UpgradesManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:20:19.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T06:20:19.768Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "LoadToGame.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\LoadToGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoadToGame.cs",
@@ -87,12 +86,11 @@
               "RelativeToolTip": "Assets\\Scripts\\LoadToGame.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T05:47:58.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T05:47:58.459Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "BuyMultiplierLine.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\BuyMultiplierLine.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BuyMultiplierLine.cs",
@@ -100,18 +98,17 @@
               "RelativeToolTip": "Assets\\Scripts\\BuyMultiplierLine.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T11:40:57.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T11:40:57.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "GloballValues.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GloballValues.cs",
               "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
               "RelativeToolTip": "Assets\\Scripts\\GloballValues.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAACdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T08:19:18.034Z",
               "EditorCaption": ""
@@ -131,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "UnitObject.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitObject.cs",
@@ -139,8 +136,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UnitObject.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAiwAYAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T13:42:44.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-27T13:42:44.011Z"
             },
             {
               "$type": "Document",
@@ -156,41 +152,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "UnitsManager.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitsManager.cs",
               "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UnitsManager.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAwwHwAAABrAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwHwAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T10:25:48.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-22T10:25:48.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "WorldStatsManager.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorldStatsManager.cs",
               "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\WorldStatsManager.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAwwB0AAABoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T08:21:56.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "WorldImageManager.cs",
               "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorldImageManager.cs",
               "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\WorldImageManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T07:38:13.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T07:38:13.202Z"
             },
             {
               "$type": "Document",

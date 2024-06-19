@@ -102,7 +102,7 @@ public class UnitsManager : MonoBehaviour
     }
 
     private void UnitTextFieldsUpdate(int unitIndex) {
-        unitDataFields[unitIndex].priceText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(PriceUp(unitIndex, units[unitIndex].Level));
+        unitDataFields[unitIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(PriceUp(unitIndex, units[unitIndex].Level));
         unitDataFields[unitIndex].levelText.text = units[unitIndex].Level.ToString();
     }
 
@@ -122,7 +122,7 @@ public class UnitsManager : MonoBehaviour
                 referenceCost += PriceUp(i, referenceLevel);
                 referenceLevel++;
             }
-            unitDataFields[i].priceText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(referenceCost);
+            unitDataFields[i].priceText.text = GlobalValues.PriceStringNumbersFormat(referenceCost);
         } 
     }
 

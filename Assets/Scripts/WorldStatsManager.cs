@@ -65,7 +65,7 @@ public class WorldStatsManager : MonoBehaviour
     public void UpdateTexts(double pollution) {
         pollutionText.text = "Pollution: " + pollution.ToString("F2") + "%";
         cleanlinessText.text = "The World is " + (100 - pollution).ToString("F5") + "% clean";
-        moneyText.text = "$ " + GlobalValues.MoneyStringNumbersFormat(Math.Round(money, 2));
+        moneyText.text = GlobalValues.MoneyStringNumbersFormat(Math.Round(money, 2));
     }
 
     public void UpdateMoney(double moneyChange) { money += moneyChange; }
