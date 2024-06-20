@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UnitsManager : MonoBehaviour
+public class UnitsManager : MonoBehaviour 
 {
     public static UnitsManager Instance { get; private set; }
 
@@ -61,11 +63,18 @@ public class UnitsManager : MonoBehaviour
         foreach (var unit in units) {
             int unitIndex = units.FindIndex(obj => obj.Name.Contains(unit.Name));
             unitDataFields[unitIndex].buyButton.onClick.AddListener(() => { UnitLevelUp(unitIndex); });
+
+            EventTrigger.Entry pointDown = new EventTrigger.Entry() { eventID = EventTriggerType.PointerDown };
+            pointDown.callback.AddListener(Stuff);
+            unitDataFields[unitIndex].unitImage.AddComponent<EventTrigger>().triggers.Add(pointDown);
+
         }
 
         //reset the buy multiplier
         SetBuyMultiplier(1);
     }
+
+    private void Stuff(BaseEventData eventData) { Debug.Log("THIS IS GONNA SHOW A DESCRIPTION IN A WINDOW"); }
 
     private void Update() {
         timer += Time.deltaTime;

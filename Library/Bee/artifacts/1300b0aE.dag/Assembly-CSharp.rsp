@@ -387,6 +387,8 @@
 "Assets/Scripts/UnitLineObject.cs"
 "Assets/Scripts/UnitObject.cs"
 "Assets/Scripts/UnitsManager.cs"
+"Assets/Scripts/UpgradeLineObject.cs"
+"Assets/Scripts/UpgradeObject.cs"
 "Assets/Scripts/UpgradesManager.cs"
 "Assets/Scripts/WorldImageManager.cs"
 "Assets/Scripts/WorldStatsManager.cs"

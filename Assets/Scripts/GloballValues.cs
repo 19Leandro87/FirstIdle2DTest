@@ -14,9 +14,9 @@ public class GlobalValues
     };
 
     //Format string numbers concerning money, showing 2 decimals (if there are any), use dot to separate the decimal part and comma for the thousands etc.
-    //If the price is above 99,999$ use exponential format n*e^x, same for the available money but if it's higher than 999,999,999,999$
+    //If the price is above 99,999$ use exponential format n*e^x, same for the available money but if it's higher than 999,999,999$
     public static string MoneyStringNumbersFormat(double money) {
-        if (money < 999999999999) return "$ " + money.ToString(money % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture);
+        if (money < 999999999) return "$ " + money.ToString(money % 1 == 0 ? "N0" : "N2", CultureInfo.InvariantCulture);
         else return "$ " + money.ToString("0.00E0");
     }    
     

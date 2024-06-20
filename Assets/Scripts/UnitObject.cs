@@ -1,11 +1,11 @@
 public class UnitObject
 {
-    public bool Enabled { get; set; }
-    public string Name { get; set; }
-    public long Level { get; set; }
+    public bool Enabled;
+    public string Name;
+    public long Level;
     public double Price;
-    public double PriceFactor { get; set; }
-    public float PollutionClean { get; set; }
-    public float PollutionCleanFactor { get; set; }
+    public double PriceFactor;
+    public float PollutionClean;
+    public float PollutionCleanFactor;
     public float PollutionUnlockPercentage;
 }
