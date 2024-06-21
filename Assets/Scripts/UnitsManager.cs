@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,7 +17,6 @@ public class UnitsManager : MonoBehaviour
     private float timer, unitsUnlockAndCleanUpdate;
     private SaveObject loadedObject;
     private float cumulativePollutionClean = 0;
-
 
     //COST PROGRESSION HYPOTHESIS:
     //cost_{next} = cost_{base} + level * (pricefactor)^{level}
@@ -44,6 +41,7 @@ public class UnitsManager : MonoBehaviour
             units[i].PollutionClean = GlobalValues.BASE_UNITS[i].PollutionClean;
             units[i].PollutionCleanFactor = GlobalValues.BASE_UNITS[i].PollutionCleanFactor;
             units[i].PollutionUnlockPercentage = GlobalValues.BASE_UNITS[i].PollutionUnlockPercentage;
+            units[i].Description = GlobalValues.BASE_UNITS[i].Description;
             UnitTextFieldsUpdate(i);
         }
 
@@ -59,13 +57,18 @@ public class UnitsManager : MonoBehaviour
             cumulativePollutionClean = loadedObject.cumulativePollutionCleaning;
         }
 
-        //Add the level up function to each unit's buy button
         foreach (var unit in units) {
+            //Add the level up function to each unit's buy button
             int unitIndex = units.FindIndex(obj => obj.Name.Contains(unit.Name));
             unitDataFields[unitIndex].buyButton.onClick.AddListener(() => { UnitLevelUp(unitIndex); });
 
+            //then add the open description when clicked/tapped function to each unit's image
+            void OpenDescription (BaseEventData eventData) { 
+                DescriptionCanvas.Instance.TriggerEnabled();
+                DescriptionCanvas.Instance.SetDescription(units[unitIndex].Description);
+            };
             EventTrigger.Entry pointDown = new EventTrigger.Entry() { eventID = EventTriggerType.PointerDown };
-            pointDown.callback.AddListener(Stuff);
+            pointDown.callback.AddListener(OpenDescription);
             unitDataFields[unitIndex].unitImage.AddComponent<EventTrigger>().triggers.Add(pointDown);
 
         }
@@ -73,8 +76,6 @@ public class UnitsManager : MonoBehaviour
         //reset the buy multiplier
         SetBuyMultiplier(1);
     }
-
-    private void Stuff(BaseEventData eventData) { Debug.Log("THIS IS GONNA SHOW A DESCRIPTION IN A WINDOW"); }
 
     private void Update() {
         timer += Time.deltaTime;

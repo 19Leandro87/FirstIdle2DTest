@@ -8,9 +8,9 @@ public class GlobalValues
     public const double BASE_POLLUTION = 1000000d;
 
     public static List<UnitObject> BASE_UNITS = new List<UnitObject> { 
-        new UnitObject { Enabled = true, Name = "Unit 0", Level = 0, Price = 50d, PriceFactor = 1.05d, PollutionClean = 5f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 0f },
-        new UnitObject { Enabled = false, Name = "Unit 1", Level = 0, Price = 1000d, PriceFactor = 1.05d, PollutionClean = 10f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 2f },
-        new UnitObject { Enabled = false, Name = "Unit 2", Level = 0, Price = 30000d, PriceFactor = 1.05d, PollutionClean = 20f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 4f }
+        new UnitObject { Enabled = true, Name = "Unit 0", Level = 0, Price = 50d, PriceFactor = 1.05d, PollutionClean = 5f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 0f, Description = "This is Unit 0" },
+        new UnitObject { Enabled = false, Name = "Unit 1", Level = 0, Price = 1000d, PriceFactor = 1.05d, PollutionClean = 10f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 2f, Description = "This is Unit 1" },
+        new UnitObject { Enabled = false, Name = "Unit 2", Level = 0, Price = 30000d, PriceFactor = 1.05d, PollutionClean = 20f, PollutionCleanFactor = 1f, PollutionUnlockPercentage = 4f, Description = "This is Unit 2" }
     };
 
     //Format string numbers concerning money, showing 2 decimals (if there are any), use dot to separate the decimal part and comma for the thousands etc.

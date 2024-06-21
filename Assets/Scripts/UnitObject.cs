@@ -8,4 +8,5 @@ public class UnitObject
     public float PollutionClean;
     public float PollutionCleanFactor;
     public float PollutionUnlockPercentage;
+    public string Description;
 }
