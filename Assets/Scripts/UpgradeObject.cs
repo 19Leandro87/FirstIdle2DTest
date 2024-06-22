@@ -1,8 +1,13 @@
 public class UpgradeObject
 {
     public bool Enabled;
+    public string Type;
     public string Name;
-    public string Description; //the text that's going to be shown in the description window
-    public int Level;
+    public int ConnectedUnitIndex;
+    public long ConnectedUnitLevelToUnlock;
+    public float PollutionUnlockPercentage;
+    public int TimesBought;
     public double Price;
+    public string ShortDescription;
+    public string FullDescription;
 }

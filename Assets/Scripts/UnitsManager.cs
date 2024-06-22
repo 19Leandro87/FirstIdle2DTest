@@ -62,15 +62,14 @@ public class UnitsManager : MonoBehaviour
             int unitIndex = units.FindIndex(obj => obj.Name.Contains(unit.Name));
             unitDataFields[unitIndex].buyButton.onClick.AddListener(() => { UnitLevelUp(unitIndex); });
 
-            //then add the open description when clicked/tapped function to each unit's image
+            //then add the open description when clicked/tapped function to each unit's image 
             void OpenDescription (BaseEventData eventData) { 
                 DescriptionCanvas.Instance.TriggerEnabled();
                 DescriptionCanvas.Instance.SetDescription(units[unitIndex].Description);
-            };
+            }
             EventTrigger.Entry pointDown = new EventTrigger.Entry() { eventID = EventTriggerType.PointerDown };
             pointDown.callback.AddListener(OpenDescription);
             unitDataFields[unitIndex].unitImage.AddComponent<EventTrigger>().triggers.Add(pointDown);
-
         }
 
         //reset the buy multiplier

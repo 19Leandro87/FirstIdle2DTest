@@ -8,4 +8,5 @@ using UnityEngine.UI;
     [SerializeField] public Image upgradeImage;
     [SerializeField] public Button buyButton;
     [SerializeField] public TextMeshProUGUI priceText;
+    [SerializeField] public TextMeshProUGUI shortDescriptionText;
 }
