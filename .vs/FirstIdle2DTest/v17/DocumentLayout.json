@@ -1,69 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\",
+  "WorkspaceRootPath": "H:\\REPOS\\FirstIdle2DTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\buymultiplierline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buymultiplierline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\loadtogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loadtogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\upgradesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|h:\\repos\\firstidle2dtest\\assets\\scripts\\upgradesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\upgradelineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradelineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\upgradeobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradeobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\descriptioncanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\descriptioncanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|c:\\repos\\firstidle2dtest\\firstidle2dtest\\assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\saveobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saveobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\globallvalues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\upgradeobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradeobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\upgradelineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradelineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\descriptioncanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\descriptioncanvas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\buymultiplierline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buymultiplierline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\loadtogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loadtogame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\saveobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\saveobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\unitlineobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldstatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldimagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\bottommenusanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\bottommenusanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bottommenusanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\assets\\scripts\\worldtimeapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|H:\\REPOS\\FirstIdle2DTest\\assets\\scripts\\worldtimeapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FACFA12-BA19-5331-1856-75A80554B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worldtimeapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -74,106 +74,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "DescriptionCanvas.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\DescriptionCanvas.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\DescriptionCanvas.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DescriptionCanvas.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\DescriptionCanvas.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\DescriptionCanvas.cs",
               "RelativeToolTip": "Assets\\Scripts\\DescriptionCanvas.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T13:37:52.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T13:37:52.058Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "UpgradeObject.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeObject.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeObject.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeObject.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAiAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:22:51.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:22:51.145Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UpgradeLineObject.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeLineObject.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeLineObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeLineObject.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeLineObject.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradeLineObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeLineObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T16:03:17.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T16:03:17.544Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UpgradesManager.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradesManager.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradesManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradesManager.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UpgradesManager.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UpgradesManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradesManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAQwEEAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T06:20:19.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "LoadToGame.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\LoadToGame.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\LoadToGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoadToGame.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\LoadToGame.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\LoadToGame.cs",
               "RelativeToolTip": "Assets\\Scripts\\LoadToGame.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T05:47:58.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T05:47:58.459Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "BuyMultiplierLine.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\BuyMultiplierLine.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\BuyMultiplierLine.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BuyMultiplierLine.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\BuyMultiplierLine.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\BuyMultiplierLine.cs",
               "RelativeToolTip": "Assets\\Scripts\\BuyMultiplierLine.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-14T11:40:57.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-14T11:40:57.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GloballValues.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GloballValues.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\GloballValues.cs",
               "RelativeToolTip": "Assets\\Scripts\\GloballValues.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAADZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T08:19:18.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UnitLineObject.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitLineObject.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitLineObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitLineObject.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitLineObject.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitLineObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\UnitLineObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -181,23 +180,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "UnitObject.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitObject.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitObject.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitObject.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\UnitObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAArAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T13:42:44.011Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SaveObject.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\SaveObject.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\SaveObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SaveObject.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\SaveObject.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\SaveObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\SaveObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -205,13 +204,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "UnitsManager.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UnitsManager.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\UnitsManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UnitsManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKEAAAABAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T10:25:48.531Z",
               "EditorCaption": ""
@@ -220,9 +219,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "WorldStatsManager.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorldStatsManager.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldStatsManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\WorldStatsManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -232,9 +231,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "WorldImageManager.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorldImageManager.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldImageManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\WorldImageManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -244,9 +243,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "BottomMenusAnimation.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\BottomMenusAnimation.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\BottomMenusAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BottomMenusAnimation.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\BottomMenusAnimation.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\BottomMenusAnimation.cs",
               "RelativeToolTip": "Assets\\Scripts\\BottomMenusAnimation.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -256,9 +255,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "SaveSystem.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\SaveSystem.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\SaveSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SaveSystem.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\SaveSystem.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\SaveSystem.cs",
               "RelativeToolTip": "Assets\\Scripts\\SaveSystem.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAowDgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -268,9 +267,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "WorldTimeAPI.cs",
-              "DocumentMoniker": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldTimeAPI.cs",
+              "DocumentMoniker": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldTimeAPI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WorldTimeAPI.cs",
-              "ToolTip": "C:\\REPOS\\FirstIdle2DTest\\FirstIdle2DTest\\Assets\\Scripts\\WorldTimeAPI.cs",
+              "ToolTip": "H:\\REPOS\\FirstIdle2DTest\\Assets\\Scripts\\WorldTimeAPI.cs",
               "RelativeToolTip": "Assets\\Scripts\\WorldTimeAPI.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwA0AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
