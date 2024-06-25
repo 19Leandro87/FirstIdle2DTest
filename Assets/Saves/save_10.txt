@@ -1,1 +1,0 @@
-{"updatedPollution":999988.0,"updatedMoney":12.0,"unitLinesEnabled":[true,false,false],"unitsLevel":[0,0,0],"unitsPrice":[50.0,1000.0,30000.0],"realWorldTime":1719126699,"cumulativePollutionCleaning":0.0,"storedOfflineProfitTimeMultiplier":1}

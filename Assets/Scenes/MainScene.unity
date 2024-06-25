@@ -3142,7 +3142,7 @@ GameObject:
   - component: {fileID: 443074277}
   m_Layer: 5
   m_Name: Upgrade2Line
-  m_TagString: Untagged
+  m_TagString: UnitConnected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3984,7 +3984,7 @@ GameObject:
   - component: {fileID: 558522652}
   m_Layer: 5
   m_Name: Upgrade0PLine
-  m_TagString: Untagged
+  m_TagString: PollutionRelated
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8074,7 +8074,7 @@ GameObject:
   - component: {fileID: 1335535082}
   m_Layer: 5
   m_Name: Upgrade1Line
-  m_TagString: Untagged
+  m_TagString: UnitConnected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12083,7 +12083,7 @@ GameObject:
   - component: {fileID: 1915026844}
   m_Layer: 5
   m_Name: Upgrade0Line
-  m_TagString: Untagged
+  m_TagString: UnitConnected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13010,7 +13010,7 @@ GameObject:
   - component: {fileID: 2083705265}
   m_Layer: 5
   m_Name: Upgrade0SLine
-  m_TagString: Untagged
+  m_TagString: Special
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
