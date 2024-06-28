@@ -16,4 +16,5 @@ public class UpgradeObject
     public double Price;
     public string ShortDescription;
     public string FullDescription;
+    public int LineIndex;
 }

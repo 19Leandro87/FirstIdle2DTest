@@ -17,14 +17,24 @@ public class GlobalValues
         Special
     }
 
-    public static List<UpgradeObject> BASE_UPGRADES = new List<UpgradeObject> {
+    public static List<UpgradeObject> BASE_UNIT_CONN_UPGRADES = new List<UpgradeObject> {
         new UpgradeObject { Enabled = false, Type = UpgradeTypes.UnitConnected, Name = "Unit 0 Upgrade", ConnectedUnitIndex = 0, TimesBought = 0, ShortDescription = "Clean x2", FullDescription = "Unit 0 will clean twice as fast! (it stacks)" },
         new UpgradeObject { Enabled = false, Type = UpgradeTypes.UnitConnected, Name = "Unit 1 Upgrade", ConnectedUnitIndex = 1, TimesBought = 0, ShortDescription = "Clean x2", FullDescription = "Unit 1 will clean twice as fast! (it stacks)" },
         new UpgradeObject { Enabled = false, Type = UpgradeTypes.UnitConnected, Name = "Unit 2 Upgrade", ConnectedUnitIndex = 2, TimesBought = 0, ShortDescription = "Clean x2", FullDescription = "Unit 2 will clean twice as fast! (it stacks)" },
-        new UpgradeObject { Enabled = false, Type = UpgradeTypes.PollutionRelated, Name = "Tap Upgrade", PollutionUnlockPercentage = 1f, TimesBought = 0, ShortDescription = "Tap x2", FullDescription = "Tapping cleans twice as much! (stacking)" },
-        new UpgradeObject { Enabled = false, Type = UpgradeTypes.Special, Name = "Combo Unit 0 - 1", TimesBought = 0, ShortDescription = "Super Unit 0", FullDescription = "Unit 0 uses Unit 1 to become more powa!" }
 
     };
+
+    public static List<UpgradeObject> BASE_POLLUTION_REL_UPGRADES = new List<UpgradeObject> {
+        new UpgradeObject { Enabled = false, Type = UpgradeTypes.PollutionRelated, Name = "Tap Upgrade", PollutionUnlockPercentage = 1f, TimesBought = 0, ShortDescription = "Tap x2", FullDescription = "Tapping cleans twice as much! (stacking)" },
+
+    };
+
+    public static List<UpgradeObject> BASE_SPECIAL_UPGRADES = new List<UpgradeObject> {
+        new UpgradeObject { Enabled = false, Type = UpgradeTypes.Special, Name = "Combo Unit 0 - 1", TimesBought = 0, ShortDescription = "Super Unit 0", FullDescription = "Unit 0 uses Unit 1 to become more powa!" },
+
+    };
+    
+
 
     //Format string numbers concerning money, showing 2 decimals (if there are any), use dot to separate the decimal part and comma for the thousands etc.
     //If the price is above 99,999$ use exponential format n*e^x, same for the available money but if it's higher than 999,999,999$
