@@ -35,5 +35,4 @@ public class BottomMenus : MonoBehaviour
             case 2: animator.SetInteger(STOP_UP_DOWN, 1); break;
         }
     }
-    
 }
