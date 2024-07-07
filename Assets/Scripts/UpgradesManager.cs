@@ -8,6 +8,7 @@ The SPECIAL upgrades are to be considered mostly individually.
 
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,7 +19,7 @@ public class UpgradesManager : MonoBehaviour
 
     [SerializeField] private List<UpgradeLineObject> upgradeDataFields;
     private List<UpgradeObject> unitConnectedUpgrades, pollutionRelatedUpgrades, specialUpgrades;
-    private readonly long[] UNIT_UPGRADES_UNLOCK_LEVEL = { 10, 25, 50, 100, 200, 250, 500, 1000, 2500, 5000, 10000 };
+    private readonly long[] UNIT_UPGRADES_UNLOCK_LEVEL = { 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000 };
     private List<int> purchasableUpgradesPerUnit;
     private float timer, upgradesUnlockCheck;
 
@@ -58,6 +59,7 @@ public class UpgradesManager : MonoBehaviour
     }
 
     private void UpgradeListsAndLinesConfig(List<UpgradeObject> baseList, List<UpgradeObject> copyList) {
+        //>>>>>>>>TODO: SAVEGAME
         for (int i = 0; i < baseList.Count; i++) {
             //create a copy of the BASE_UPGRADES (for each type) to work with, without altering the actual BASE_UPGRADES
             copyList.Add(new UpgradeObject());
@@ -99,22 +101,28 @@ public class UpgradesManager : MonoBehaviour
             pointDown.callback.AddListener(OpenDescription);
             upgradeDataFields[upgrade.LineIndex].upgradeImage.AddComponent<EventTrigger>().triggers.Add(pointDown);
         }
+
+        UpdateUnitConnectedCosts();
+        SetPollRelAndSpecialTextPrice();
     }
 
     private void BuyUpgrade(int upgradeIndex, GlobalValues.UpgradeTypes upgradeType) { 
-        UnlockUpdateUpgrades();
         switch (upgradeType) {
             case GlobalValues.UpgradeTypes.UnitConnected:
-                Debug.Log("funziooouna " + unitConnectedUpgrades[upgradeIndex].Name);
-                unitConnectedUpgrades[upgradeIndex].TimesBought++;
-                UnlockUpdateUpgrades();
-                if (purchasableUpgradesPerUnit[upgradeIndex] == 0) upgradeDataFields[unitConnectedUpgrades[upgradeIndex].LineIndex].upgradeLine.SetActive(false);
-                Debug.Log("funziooouna " + unitConnectedUpgrades[upgradeIndex].TimesBought);
+                if (WorldStatsManager.Instance.GetMoney() >= unitConnectedUpgrades[upgradeIndex].Price) {
+                    WorldStatsManager.Instance.UpdateMoney(-unitConnectedUpgrades[upgradeIndex].Price);
+                    unitConnectedUpgrades[upgradeIndex].TimesBought++;
+                    UpdateUnitConnectedCosts();
+                    UnlockUpdateUpgrades();
+                }
                 break;
 
             case GlobalValues.UpgradeTypes.PollutionRelated:
-                pollutionRelatedUpgrades[upgradeIndex].TimesBought++;
-                upgradeDataFields[pollutionRelatedUpgrades[upgradeIndex].LineIndex].upgradeLine.SetActive(false);
+                if (WorldStatsManager.Instance.GetMoney() >= pollutionRelatedUpgrades[upgradeIndex].Price) {
+                    WorldStatsManager.Instance.UpdateMoney(-pollutionRelatedUpgrades[upgradeIndex].Price);
+                    pollutionRelatedUpgrades[upgradeIndex].TimesBought++;
+                    UnlockUpdateUpgrades();
+                }
                 break;
 
             case GlobalValues.UpgradeTypes.Special:
@@ -136,20 +144,34 @@ public class UpgradesManager : MonoBehaviour
                     highestUpgr++;
 
             purchasableUpgradesPerUnit[i] = highestUpgr - unitConnectedUpgrades[i].TimesBought;
-            if (purchasableUpgradesPerUnit[i]>0) upgradeDataFields[unitConnectedUpgrades[i].LineIndex].upgradeLine.SetActive(true);
+            if (purchasableUpgradesPerUnit[i] > 0) 
+                upgradeDataFields[unitConnectedUpgrades[i].LineIndex].upgradeLine.SetActive(true);
+            else 
+                upgradeDataFields[unitConnectedUpgrades[i].LineIndex].upgradeLine.SetActive(false);
         }
-
 
         //pollution related upgrades unlock conditions check: if the upgrade hasn't been bought and the % of clanliness is met, activate its line
         double worldUpdatedPollution = WorldStatsManager.Instance.GetUpdatedPollution();
         for (int i = 0; i < pollutionRelatedUpgrades.Count; i++)
             if (pollutionRelatedUpgrades[i].TimesBought == 0 && worldUpdatedPollution < GlobalValues.BASE_POLLUTION - GlobalValues.BASE_POLLUTION * pollutionRelatedUpgrades[i].PollutionUnlockPercentage / 100)
                 upgradeDataFields[pollutionRelatedUpgrades[i].LineIndex].upgradeLine.SetActive(true);
+            else 
+                upgradeDataFields[pollutionRelatedUpgrades[i].LineIndex].upgradeLine.SetActive(false);
+
+        //>>>>>>TODO: specials
     }
 
-    public List<bool> GetEnabledUpgradeLines() {
-        List<bool> enabled = new List<bool>();
-        //foreach (var upgradeLine in allUpgradeLines) enabled.Add(upgradeLine.activeSelf);
-        return enabled;
+    public void UpdateUnitConnectedCosts() {
+        //price increment equals a factor times the base price of the unit times a price factor raised to the power of unit's upgrade TimesBought times a factor
+        //or: upgrade_price = x * base_unit_price * y^(z * upgrade_times_bought)
+        for (int i = 0; i < unitConnectedUpgrades.Count; i++) {
+            unitConnectedUpgrades[i].Price = Math.Round(100 * GlobalValues.BASE_UNITS[i].Price * Math.Pow(2d, 2 * unitConnectedUpgrades[i].TimesBought), 2);
+            upgradeDataFields[unitConnectedUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(unitConnectedUpgrades[i].Price);
+        };         
+    }
+
+    private void SetPollRelAndSpecialTextPrice() {
+        for (int i = 0; i < pollutionRelatedUpgrades.Count; i++) upgradeDataFields[pollutionRelatedUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(pollutionRelatedUpgrades[i].Price);
+        for (int i = 0; i < specialUpgrades.Count; i++) upgradeDataFields[specialUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(specialUpgrades[i].Price);
     }
 }

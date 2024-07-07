@@ -25,7 +25,7 @@ public class GlobalValues
     };
 
     public static List<UpgradeObject> BASE_POLLUTION_REL_UPGRADES = new List<UpgradeObject> {
-        new UpgradeObject { Enabled = false, Type = UpgradeTypes.PollutionRelated, Name = "Tap Upgrade", PollutionUnlockPercentage = 1f, TimesBought = 0, ShortDescription = "Tap x2", FullDescription = "Tapping cleans twice as much! (stacking)" },
+        new UpgradeObject { Enabled = false, Type = UpgradeTypes.PollutionRelated, Name = "Tap Upgrade", PollutionUnlockPercentage = 1f, TimesBought = 0, Price = 1000d, ShortDescription = "Tap x2", FullDescription = "Tapping cleans twice as much! (stacking)" },
 
     };
 
