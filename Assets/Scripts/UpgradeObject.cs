@@ -12,6 +12,7 @@ public class UpgradeObject
     public string Name;
     public int ConnectedUnitIndex;
     public float PollutionUnlockPercentage;
+    public long clickMultiplier;
     public int TimesBought;
     public double Price;
     public string ShortDescription;

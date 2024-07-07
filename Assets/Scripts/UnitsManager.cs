@@ -119,6 +119,10 @@ public class UnitsManager : MonoBehaviour
 
     public float GetCumulativePollutionClean() {  return cumulativePollutionClean; }
 
+    public void IncreaseCumulativePollutionClean(float cleanIncrease) { cumulativePollutionClean += cleanIncrease; }
+
+    public void SetUnitPollutionCleanFactor(int unitIndex, float factorMultiplier) { units[unitIndex].PollutionCleanFactor *= factorMultiplier; }
+
     private double PriceUp(int index, long level) { return Math.Round(GlobalValues.BASE_UNITS[index].Price * Math.Pow(GlobalValues.BASE_UNITS[index].PriceFactor, level), 2); }
 
     public void SetBuyMultiplier(int multiplier) { 
@@ -158,5 +162,11 @@ public class UnitsManager : MonoBehaviour
         List<double> prices = new List<double>();
         foreach (var unit in units) prices.Add(unit.Price);
         return prices;
+    }
+
+    public List<float> GetUnitsPCF() { 
+        List<float> pcfs = new List<float>();
+        foreach (var unit in units) pcfs.Add(unit.PollutionCleanFactor);
+        return pcfs;
     }
 }

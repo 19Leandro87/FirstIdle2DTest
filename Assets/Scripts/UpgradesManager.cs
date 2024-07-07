@@ -112,8 +112,18 @@ public class UpgradesManager : MonoBehaviour
                 if (WorldStatsManager.Instance.GetMoney() >= unitConnectedUpgrades[upgradeIndex].Price) {
                     WorldStatsManager.Instance.UpdateMoney(-unitConnectedUpgrades[upgradeIndex].Price);
                     unitConnectedUpgrades[upgradeIndex].TimesBought++;
+
+                    //increase the CPC
+                    float actualPCF = UnitsManager.Instance.GetUnitsPCF()[upgradeIndex];
+                    UnitsManager.Instance.IncreaseCumulativePollutionClean(actualPCF * UnitsManager.Instance.GetUnitsLevel()[upgradeIndex] * GlobalValues.BASE_UNITS[upgradeIndex].PollutionClean);
+
+                    //multiply the PCF of the unit at the index corresponding to its upgradeIndex
+                    int multiplier = 2;
+                    UnitsManager.Instance.SetUnitPollutionCleanFactor(upgradeIndex, multiplier);
+
                     UpdateUnitConnectedCosts();
                     UnlockUpdateUpgrades();
+                    WorldStatsManager.Instance.UpdateTexts(0);
                 }
                 break;
 
@@ -121,7 +131,9 @@ public class UpgradesManager : MonoBehaviour
                 if (WorldStatsManager.Instance.GetMoney() >= pollutionRelatedUpgrades[upgradeIndex].Price) {
                     WorldStatsManager.Instance.UpdateMoney(-pollutionRelatedUpgrades[upgradeIndex].Price);
                     pollutionRelatedUpgrades[upgradeIndex].TimesBought++;
+
                     UnlockUpdateUpgrades();
+                    WorldStatsManager.Instance.UpdateTexts(0);
                 }
                 break;
 
