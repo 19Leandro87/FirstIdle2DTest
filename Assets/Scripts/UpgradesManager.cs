@@ -152,7 +152,7 @@ public class UpgradesManager : MonoBehaviour
         for (int i = 0; i < unitConnectedUpgrades.Count; i++) {
             int highestUpgr = 0;
             for (int j = 0; j < UNIT_UPGRADES_UNLOCK_LEVEL.Length; j++)
-                if (unitsLevels[i] / UNIT_UPGRADES_UNLOCK_LEVEL[j] >= 1) 
+                if (unitsLevels[i] >= UNIT_UPGRADES_UNLOCK_LEVEL[j]) 
                     highestUpgr++;
 
             purchasableUpgradesPerUnit[i] = highestUpgr - unitConnectedUpgrades[i].TimesBought;
@@ -185,5 +185,25 @@ public class UpgradesManager : MonoBehaviour
     private void SetPollRelAndSpecialTextPrice() {
         for (int i = 0; i < pollutionRelatedUpgrades.Count; i++) upgradeDataFields[pollutionRelatedUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(pollutionRelatedUpgrades[i].Price);
         for (int i = 0; i < specialUpgrades.Count; i++) upgradeDataFields[specialUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(specialUpgrades[i].Price);
+    }
+
+    public List<bool> GetEnabledUpgradeLines(GlobalValues.UpgradeTypes upgradeType) {
+        List<bool> enabled = new List<bool>();
+        List<UpgradeObject> upgradeObjects = new List<UpgradeObject>();
+        switch (upgradeType) {
+            case GlobalValues.UpgradeTypes.UnitConnected:
+                upgradeObjects = unitConnectedUpgrades;
+                break;
+
+            case GlobalValues.UpgradeTypes.PollutionRelated:
+                upgradeObjects = pollutionRelatedUpgrades;
+                break;
+
+            case GlobalValues.UpgradeTypes.Special:
+                upgradeObjects = specialUpgrades;
+                break;
+        }
+        foreach (UpgradeObject upgrade in upgradeObjects) enabled.Add(upgradeDataFields[upgrade.LineIndex].upgradeLine.activeSelf);
+        return enabled;
     }
 }
