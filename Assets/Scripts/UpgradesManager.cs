@@ -89,7 +89,7 @@ public class UpgradesManager : MonoBehaviour
 
         //configure buy buttons and images tap behavior 
         foreach (UpgradeObject upgrade in copyList) {
-            //the buy upgrade button located at a certain line of the scroll menu, will be linked to his upgrade in the upgrade list
+            //the buy upgrade button located at a certain line of the scroll menu, will be linked to his upgrade in the upgrade list 
             int upgradeIndex = copyList.FindIndex(obj => obj.Name.Contains(upgrade.Name));
             upgradeDataFields[upgrade.LineIndex].buyButton.onClick.AddListener(() => { BuyUpgrade(upgradeIndex, upgrade.Type); });
 
@@ -149,17 +149,17 @@ public class UpgradesManager : MonoBehaviour
         //check which is the highest purchasable upgrade for each unit according to its level
         //and calculate which upgrades are still available to buy, considering the ones already bought 
         List<long> unitsLevels = UnitsManager.Instance.GetUnitsLevel();
-        for (int i = 0; i < unitConnectedUpgrades.Count; i++) {
+        for (int unitUpgradeIndex = 0; unitUpgradeIndex < unitConnectedUpgrades.Count; unitUpgradeIndex++) {
             int highestUpgr = 0;
             for (int j = 0; j < UNIT_UPGRADES_UNLOCK_LEVEL.Length; j++)
-                if (unitsLevels[i] >= UNIT_UPGRADES_UNLOCK_LEVEL[j]) 
+                if (unitsLevels[unitUpgradeIndex] >= UNIT_UPGRADES_UNLOCK_LEVEL[j]) 
                     highestUpgr++;
 
-            purchasableUpgradesPerUnit[i] = highestUpgr - unitConnectedUpgrades[i].TimesBought;
-            if (purchasableUpgradesPerUnit[i] > 0) 
-                upgradeDataFields[unitConnectedUpgrades[i].LineIndex].upgradeLine.SetActive(true);
+            purchasableUpgradesPerUnit[unitUpgradeIndex] = highestUpgr - unitConnectedUpgrades[unitUpgradeIndex].TimesBought;
+            if (purchasableUpgradesPerUnit[unitUpgradeIndex] > 0) 
+                upgradeDataFields[unitConnectedUpgrades[unitUpgradeIndex].LineIndex].upgradeLine.SetActive(true);
             else 
-                upgradeDataFields[unitConnectedUpgrades[i].LineIndex].upgradeLine.SetActive(false);
+                upgradeDataFields[unitConnectedUpgrades[unitUpgradeIndex].LineIndex].upgradeLine.SetActive(false);
         }
 
         //pollution related upgrades unlock conditions check: if the upgrade hasn't been bought and the % of clanliness is met, activate its line
@@ -175,7 +175,7 @@ public class UpgradesManager : MonoBehaviour
 
     public void UpdateUnitConnectedCosts() {
         //price increment equals a factor times the base price of the unit times a price factor raised to the power of unit's upgrade TimesBought times a factor
-        //or: upgrade_price = x * base_unit_price * y^(z * upgrade_times_bought)
+        //or: upgrade_price = x * base_unit_price * y^(z * upgrade_times_bought) 
         for (int i = 0; i < unitConnectedUpgrades.Count; i++) {
             unitConnectedUpgrades[i].Price = Math.Round(100 * GlobalValues.BASE_UNITS[i].Price * Math.Pow(2d, 2 * unitConnectedUpgrades[i].TimesBought), 2);
             upgradeDataFields[unitConnectedUpgrades[i].LineIndex].priceText.text = GlobalValues.PriceStringNumbersFormat(unitConnectedUpgrades[i].Price);
